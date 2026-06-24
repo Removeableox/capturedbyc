@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --text: #eef1fb;
+  --background: #040610;
+  --primary: #3049c5;
+  --secondary: #6d1e7b;
+  --accent: #9c268e;
+  --linearPrimarySecondary: linear-gradient(to right, #3049c5, #6d1e7b);
+  --linearPrimaryAccent: linear-gradient(to right, #3049c5, #9c268e);
+  --linearSecondaryAccent: linear-gradient(to right, #6d1e7b, #9c268e);
+  --radialPrimarySecondary: radial-gradient(#3049c5, #6d1e7b);
+  --radialPrimaryAccent: radial-gradient(#3049c5, #9c268e);
+  --radialSecondaryAccent: radial-gradient(#6d1e7b, #9c268e);
 }
 
 @theme inline {
+  --color-text: var(--text);
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-oswald);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+}
+
+.font-display {
+  font-family: var(--font-oswald), sans-serif;
+}
+
+.bg-linear-primary-secondary {
+  background: var(--linearPrimarySecondary);
+}
+
+.bg-linear-primary-accent {
+  background: var(--linearPrimaryAccent);
+}
+
+.bg-linear-secondary-accent {
+  background: var(--linearSecondaryAccent);
+}
+
+.bg-radial-primary-secondary {
+  background: var(--radialPrimarySecondary);
+}
+
+.bg-radial-primary-accent {
+  background: var(--radialPrimaryAccent);
+}
+
+.bg-radial-secondary-accent {
+  background: var(--radialSecondaryAccent);
+}
+
+.text-gradient-primary-secondary,
+.text-gradient-primary-accent,
+.text-gradient-secondary-accent {
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-gradient-primary-secondary {
+  background: var(--linearPrimarySecondary);
+}
+
+.text-gradient-primary-accent {
+  background: var(--linearPrimaryAccent);
+}
+
+.text-gradient-secondary-accent {
+  background: var(--linearSecondaryAccent);
+}
+
+.btn-gradient-primary-accent {
+  background: var(--linearPrimaryAccent);
+  color: white;
+}
+
+.bg-surface {
+  background: color-mix(in srgb, var(--text) 4%, var(--background));
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 80s linear infinite;
 }

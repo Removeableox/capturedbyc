@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { aboutImage } from "@/lib/data";
 
 export function About() {
   return (
@@ -8,8 +9,8 @@ export function About() {
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
           <Image
-            src="https://images.unsplash.com/photo-1554048612-b6a482b8f920?w=800&q=80"
-            alt="Photographer capturing action from the sidelines"
+            src={aboutImage.src}
+            alt={aboutImage.alt}
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

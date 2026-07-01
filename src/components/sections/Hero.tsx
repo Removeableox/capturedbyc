@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { heroImage } from "@/lib/data";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-screen items-end overflow-hidden">
       <Image
-        src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=85"
-        alt="Peak sports action moment captured under stadium lights"
+        src={heroImage.src}
+        alt={heroImage.alt}
         fill
         priority
         className="object-cover object-center"

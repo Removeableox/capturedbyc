@@ -37,51 +37,118 @@ export const reviews = [
   },
 ];
 
+const photoBase = "/photos/favourite-sports";
+
+export const heroImage = {
+  src: `${photoBase}/DS1_6610.jpg`,
+  alt: "Youth hockey players collide in a dramatic on-ice moment",
+};
+
+export const aboutImage = {
+  src: `${photoBase}/DS1_6724.jpg`,
+  alt: "Close-up portrait of a hockey player in full gear",
+};
+
 export const portfolioItems = [
   {
-    src: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
-    alt: "Peak action moment on the field",
-    caption: "Game-winning shot, overtime final",
+    src: `${photoBase}/05.jpg`,
+    alt: "Hockey player celebrating on the ice after a big moment",
+    caption: "Pure emotion after the buzzer",
   },
   {
-    src: "https://images.unsplash.com/photo-1546519635-76d81e1b370e?w=800&q=80",
-    alt: "Basketball player mid-dunk",
-    caption: "Championship celebration",
+    src: `${photoBase}/DS1_6610.jpg`,
+    alt: "Two hockey players colliding during intense game action",
+    caption: "Peak action, split-second timing",
   },
   {
-    src: "https://images.unsplash.com/photo-1517927039222-b63fd281898c?w=800&q=80",
-    alt: "Athlete portrait session",
+    src: `${photoBase}/DS1_0549.jpg`,
+    alt: "Two players battling for the puck at a face-off",
+    caption: "Every puck battle matters",
+  },
+  {
+    src: `${photoBase}/IMG-20260628-WA0007.jpg`,
+    alt: "Body check sending ice shavings flying across the rink",
+    caption: "Physical play, frozen in time",
+  },
+  {
+    src: `${photoBase}/01.jpg`,
+    alt: "Goalie in butterfly save with selective color editing",
+    caption: "Creative editing, dramatic focus",
+  },
+  {
+    src: `${photoBase}/DS1_9255.jpg`,
+    alt: "Goalie making a butterfly save in front of the net",
+    caption: "Between the pipes",
+  },
+  {
+    src: `${photoBase}/IMG-20260628-WA0006.jpg`,
+    alt: "Puck airborne as goalie and skaters converge on the crease",
+    caption: "Chaos at the crease",
+  },
+  {
+    src: `${photoBase}/DS1_9196.jpg`,
+    alt: "Two hockey players battling for position along the boards",
+    caption: "Battling along the boards",
+  },
+  {
+    src: `${photoBase}/02.jpg`,
+    alt: "Toronto Aeros player locked in during game action",
+    caption: "Game face, full focus",
+  },
+  {
+    src: `${photoBase}/04.jpg`,
+    alt: "Female hockey player handling the puck in a low stance",
+    caption: "Power and precision on the ice",
+  },
+  {
+    src: `${photoBase}/DS1_8014.jpg`,
+    alt: "Female hockey player celebrating a goal on one knee",
+    caption: "Victory moment",
+  },
+  {
+    src: `${photoBase}/IMG-20260318-WA0038.jpg`,
+    alt: "Team captain smiling during a post-game celebration",
+    caption: "Captain's pride",
+  },
+  {
+    src: `${photoBase}/DS1_7708.jpg`,
+    alt: "Goalie and teammate celebrating in front of the net",
+    caption: "Celebrating the shutout",
+  },
+  {
+    src: `${photoBase}/DS1_6724.jpg`,
+    alt: "Close-up portrait of a young hockey player in a Bauer helmet",
     caption: "Athlete portrait session",
   },
   {
-    src: "https://images.unsplash.com/photo-1574629810360-7dfe12345799?w=800&q=80",
-    alt: "Football action under stadium lights",
-    caption: "Friday night under the lights",
+    src: `${photoBase}/DS1_7749.jpg`,
+    alt: "Hockey player skating with the puck at full speed",
+    caption: "Speed on the breakaway",
   },
   {
-    src: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80",
-    alt: "Soccer player in motion",
-    caption: "Peak action moment",
+    src: `${photoBase}/DS1_9285.jpg`,
+    alt: "Ice Ray Hockey Academy player skating with stick ready",
+    caption: "Ready for the rush",
   },
   {
-    src: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80",
-    alt: "Runner crossing finish line",
-    caption: "Emotional finish line moment",
+    src: `${photoBase}/DS1_0683.jpg`,
+    alt: "Black and white portrait of an Ice Ray Hockey Academy goalie",
+    caption: "Classic goalie portrait",
   },
   {
-    src: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
-    alt: "Team huddle before game",
-    caption: "Team celebration",
+    src: `${photoBase}/O3.jpg`,
+    alt: "Youth goalie standing beside the net in full gear",
+    caption: "Standing tall in the crease",
   },
   {
-    src: "https://images.unsplash.com/photo-1594381898411-846e7d193883?w=800&q=80",
-    alt: "Tennis player serving",
-    caption: "Dramatic lighting, creative angle",
+    src: `${photoBase}/06.jpg`,
+    alt: "Young goalie receiving a medal on the ice",
+    caption: "Medal ceremony moment",
   },
   {
-    src: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=800&q=80",
-    alt: "Baseball pitcher wind-up",
-    caption: "Anticipating the pitch",
+    src: `${photoBase}/IMG-20260628-WA0009.jpg`,
+    alt: "Players battling for the puck during a physical play",
+    caption: "Never giving up the puck",
   },
 ];
 

@@ -165,7 +165,11 @@ export const portfolioItems = [
 
 export const featuredHeroShots = portfolioItems.slice(0, 3);
 
-export const featuredPortfolio = portfolioItems.slice(0, 10);
+/** Grid shows items 4–10; strip above covers the first 3 (no duplication). */
+export const gridPortfolio = portfolioItems.slice(3, 10);
+
+/** All curated shots for lightbox navigation (strip + grid). */
+export const portfolioLightboxItems = portfolioItems.slice(0, 10);
 
 export const services = [
   {

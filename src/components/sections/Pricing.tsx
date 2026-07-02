@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Section } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
 import { pricingTiers } from "@/lib/data";
 
 export function Pricing() {
@@ -39,13 +39,13 @@ export function Pricing() {
               ))}
             </ul>
             <div className="mt-8">
-              <Button
+              <Link
                 href="#contact"
-                variant={tier.highlighted ? "primary" : "secondary"}
-                className="w-full"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-accent transition-colors hover:text-accent/80"
               >
-                Get Started
-              </Button>
+                Request quote
+                <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </article>
         ))}

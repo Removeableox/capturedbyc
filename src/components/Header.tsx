@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { navLinks, siteConfig } from "@/lib/data";
+import { OVERLAY_OPEN_EVENT } from "@/lib/overlay-events";
 import { Button } from "@/components/ui/Button";
 
 const MOBILE_NAV_ID = "mobile-nav-panel";
@@ -16,6 +17,12 @@ export function Header() {
   const closeMenu = useCallback(() => {
     setOpen(false);
     menuButtonRef.current?.focus();
+  }, []);
+
+  useEffect(() => {
+    const handleOverlayOpen = () => setOpen(false);
+    window.addEventListener(OVERLAY_OPEN_EVENT, handleOverlayOpen);
+    return () => window.removeEventListener(OVERLAY_OPEN_EVENT, handleOverlayOpen);
   }, []);
 
   useEffect(() => {

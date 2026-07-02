@@ -25,7 +25,7 @@ export function SectionHeading({
       {subtitle && (
         <p
           className={`mt-4 text-base leading-relaxed sm:text-lg ${
-            inverted ? "text-white/75" : "text-text/60"
+            inverted ? "text-white/75" : "text-secondary-tier"
           }`}
         >
           {subtitle}

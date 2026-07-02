@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { aboutImage } from "@/lib/data";
+import { Section } from "@/components/ui/Section";
+import { aboutImage, aboutPullQuote } from "@/lib/data";
 
 export function About() {
   return (
-    <Container id="about" className="py-16 sm:py-24">
+    <Section id="about" className="border-t border-text/10 bg-surface">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
           <Image
@@ -24,7 +24,11 @@ export function About() {
             align="left"
           />
 
-          <div className="space-y-4 text-base leading-relaxed text-text/60">
+          <blockquote className="mb-8 border-l-4 border-accent pl-4 font-display text-2xl leading-tight text-primary-tier sm:text-3xl">
+            &ldquo;{aboutPullQuote}&rdquo;
+          </blockquote>
+
+          <div className="space-y-4 text-base leading-relaxed text-secondary-tier">
             <p>
               I picked up a camera at my first high school game and never looked
               back. There&apos;s something electric about that split second before
@@ -32,10 +36,9 @@ export function About() {
               capture it.
             </p>
             <p>
-              Sports photography isn&apos;t a side gig for me. It&apos;s the only
-              thing I do. That focus means I know the rhythms of every sport I
-              shoot, the angles that tell a story, and the moments coaches and
-              athletes actually want to relive.
+              That focus means I know the rhythms of every sport I shoot, the
+              angles that tell a story, and the moments coaches and athletes
+              actually want to relive.
             </p>
             <p>
               When you book with me, you get someone on the sidelines who thinks
@@ -44,6 +47,6 @@ export function About() {
           </div>
         </div>
       </div>
-    </Container>
+    </Section>
   );
 }

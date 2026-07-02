@@ -1,38 +1,42 @@
-import { Container } from "@/components/ui/Container";
+import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
+import { Section } from "@/components/ui/Section";
 import { services } from "@/lib/data";
 
 export function Services() {
   return (
-    <Container id="services" className="border-t border-text/10 bg-secondary/8 py-16 sm:py-24">
+    <Section id="services" className="border-t border-text/10">
       <SectionHeading
         title="Services"
         subtitle="Clear packages built for athletes, teams, and brands who need results fast."
       />
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
         {services.map((service) => (
           <article
             key={service.title}
-            className="group rounded-2xl border border-text/10 bg-surface p-6 transition-colors hover:border-primary/40"
+            className="group relative min-h-[280px] overflow-hidden rounded-2xl border border-text/10"
           >
-            <span className="text-3xl" role="img" aria-hidden="true">
-              {service.icon}
-            </span>
-            <h3 className="mt-4 font-display text-xl font-bold text-text">
-              {service.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-text/60">
-              {service.description}
-            </p>
+            <Image
+              src={service.image}
+              alt=""
+              fill
+              className="object-cover transition-transform duration-500 motion-reduce:transition-none motion-reduce:group-hover:scale-100 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, 50vw"
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/20" />
+            <div className="relative flex h-full flex-col justify-end p-6 sm:p-8">
+              <h3 className="font-display text-2xl font-bold text-text sm:text-3xl">
+                {service.title}
+              </h3>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-secondary-tier sm:text-base">
+                {service.description}
+              </p>
+            </div>
           </article>
         ))}
       </div>
-
-      <div className="mt-12 text-center">
-        <Button href="#contact">Get a Custom Quote</Button>
-      </div>
-    </Container>
+    </Section>
   );
 }

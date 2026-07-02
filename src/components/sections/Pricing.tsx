@@ -1,24 +1,55 @@
-import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { pricingTiers } from "@/lib/data";
 
 export function Pricing() {
   return (
-    <Container className="border-y border-text/10 bg-secondary/10 py-16 sm:py-20">
-      <div className="mx-auto max-w-2xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-          Pricing
-        </p>
-        <h2 className="font-display mt-4 text-3xl font-bold text-text sm:text-4xl">
-          Packages starting at $350
-        </h2>
-        <p className="mt-4 text-base text-text/60">
-          Custom pricing based on event size and coverage needs. Every quote is
-          tailored—no one-size-fits-all packages.
-        </p>
-        <div className="mt-8">
-          <Button href="#contact">Request Pricing</Button>
-        </div>
+    <Section id="pricing" className="border-t border-text/10 bg-surface">
+      <SectionHeading
+        title="Pricing"
+        subtitle="Transparent packages with clear inclusions. Every quote is tailored to your event."
+      />
+
+      <div className="grid gap-6 lg:grid-cols-3">
+        {pricingTiers.map((tier) => (
+          <article
+            key={tier.name}
+            className={`flex flex-col rounded-2xl border p-6 sm:p-8 ${
+              tier.highlighted
+                ? "border-accent bg-background shadow-lg shadow-accent/10"
+                : "border-text/10 bg-background"
+            }`}
+          >
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+              {tier.name}
+            </p>
+            <p className="font-display mt-3 text-4xl font-bold text-text sm:text-5xl">
+              {tier.price}
+            </p>
+            <p className="mt-3 text-sm text-secondary-tier">{tier.description}</p>
+            <ul className="mt-6 flex-1 space-y-3">
+              {tier.features.map((feature) => (
+                <li key={feature} className="flex items-start gap-3 text-sm text-secondary-tier">
+                  <span className="mt-1 text-accent" aria-hidden="true">
+                    ✓
+                  </span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8">
+              <Button
+                href="#contact"
+                variant={tier.highlighted ? "primary" : "secondary"}
+                className="w-full"
+              >
+                Get Started
+              </Button>
+            </div>
+          </article>
+        ))}
       </div>
-    </Container>
+    </Section>
   );
 }

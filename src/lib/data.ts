@@ -6,6 +6,14 @@ export const siteConfig = {
   serviceAreas: "Greater Metro Area & travel nationwide",
 };
 
+export const heroContent = {
+  eyebrow: "Solo Sports Photographer",
+  headline: "The Moment Everyone Misses",
+  subheadline:
+    "Elite sports photography for game-day coverage, athlete portraits, and team brands.",
+  stats: ["500+ games photographed", "24–72hr delivery", "D1 recruitment ready"],
+};
+
 export const reviews = [
   {
     quote: "Best sports photographer we've ever worked with.",
@@ -48,6 +56,9 @@ export const aboutImage = {
   src: `${photoBase}/DS1_6724.jpg`,
   alt: "Close-up portrait of a hockey player in full gear",
 };
+
+export const aboutPullQuote =
+  "Sports photography isn't a side gig for me. It's the only thing I do.";
 
 export const portfolioItems = [
   {
@@ -152,44 +163,75 @@ export const portfolioItems = [
   },
 ];
 
+export const featuredHeroShots = portfolioItems.slice(0, 3);
+
+export const featuredPortfolio = portfolioItems.slice(0, 10);
+
 export const services = [
   {
-    icon: "📸",
     title: "Game Day Coverage",
     description:
       "Full match and event coverage with fast turnaround highlight images ready for social and press.",
+    image: `${photoBase}/DS1_6610.jpg`,
   },
   {
-    icon: "🧑‍🎓",
     title: "Athlete Portraits",
     description:
       "Studio or on-location sessions producing recruitment-ready imagery that stands out.",
+    image: `${photoBase}/DS1_6724.jpg`,
   },
   {
-    icon: "🏟️",
     title: "Team Packages",
     description:
       "Season coverage options with media day shoots included for your entire roster.",
+    image: `${photoBase}/DS1_7708.jpg`,
   },
   {
-    icon: "📣",
     title: "Brand / Sponsorship Content",
     description:
       "Product and athlete integration plus social media content built for engagement.",
+    image: `${photoBase}/02.jpg`,
   },
 ];
 
-export const differentiators = [
-  "I specialize exclusively in sports photography",
-  "I know how to anticipate peak action—not just react to it",
-  "Fast delivery for media deadlines",
-  "Professional-grade editing for print and social",
-];
-
-export const differentiatorExtras = [
-  "Fast turnaround (24–72h highlights)",
-  "Travel-ready for events",
-  "High-end gear for low-light arenas",
+export const pricingTiers = [
+  {
+    name: "Game Day",
+    price: "$350",
+    description: "Single event coverage with highlight delivery.",
+    features: [
+      "Full game coverage",
+      "24–72hr highlight delivery",
+      "Web-optimized social files",
+      "Online gallery access",
+    ],
+    highlighted: false,
+  },
+  {
+    name: "Season Package",
+    price: "Custom",
+    description: "Multi-game coverage for teams and leagues.",
+    features: [
+      "Multiple events per season",
+      "Media day session included",
+      "Priority turnaround",
+      "Team roster portraits",
+      "Dedicated shot list planning",
+    ],
+    highlighted: true,
+  },
+  {
+    name: "Portrait Session",
+    price: "Custom",
+    description: "Recruitment-ready athlete imagery.",
+    features: [
+      "On-location or studio session",
+      "Multiple looks and setups",
+      "Professional retouching",
+      "Print + digital files",
+    ],
+    highlighted: false,
+  },
 ];
 
 export const processSteps = [
@@ -248,5 +290,4 @@ export const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
   { label: "About", href: "#about" },
-  { label: "FAQ", href: "#faq" },
 ];

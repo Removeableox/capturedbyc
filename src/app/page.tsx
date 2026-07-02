@@ -1,9 +1,9 @@
 import { Header } from "@/components/Header";
+import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { Hero } from "@/components/sections/Hero";
 import { SocialProof } from "@/components/sections/SocialProof";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Services } from "@/components/sections/Services";
-import { WhyChooseMe } from "@/components/sections/WhyChooseMe";
 import { Process } from "@/components/sections/Process";
 import { Pricing } from "@/components/sections/Pricing";
 import { About } from "@/components/sections/About";
@@ -15,12 +15,11 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <SocialProof />
         <Portfolio />
         <Services />
-        <WhyChooseMe />
         <Process />
         <Pricing />
         <About />
@@ -28,6 +27,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
+      <MobileStickyCTA />
     </>
   );
 }

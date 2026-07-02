@@ -31,12 +31,6 @@ export default function RootLayout({
         <a href="#main" className="sr-only">
           Skip to content
         </a>
-        <form name="contact" data-netlify="true" hidden>
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="text" name="name" />
-          <input type="date" name="event-date" />
-          <input type="text" name="sport" />
-        </form>
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

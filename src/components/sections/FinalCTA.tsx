@@ -22,7 +22,7 @@ export function FinalCTA() {
     setSubmitting(true);
 
     try {
-      await fetch("/", {
+      await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encodeFormData(event.currentTarget),
@@ -73,9 +73,6 @@ export function FinalCTA() {
             ) : (
               <form
                 name="contact"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
                 className="rounded-2xl border border-text/10 bg-surface p-6 sm:p-8"
                 onSubmit={handleSubmit}
               >

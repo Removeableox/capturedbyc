@@ -1,8 +1,7 @@
 export const siteConfig = {
   name: "Celina Da Silva",
   tagline: "Elite Sports Photography",
-  email: "hello@capturedbyc.com",
-  instagram: "https://instagram.com/capturedbyc",
+  instagram: "https://www.instagram.com/captured.by._c/",
   serviceAreas: "Greater Metro Area & travel nationwide",
 };
 

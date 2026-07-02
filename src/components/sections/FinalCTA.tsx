@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
-import { heroImage, siteConfig } from "@/lib/data";
+import { heroImage } from "@/lib/data";
 
 function encodeFormData(form: HTMLFormElement) {
   const data = new FormData(form);
@@ -16,20 +16,27 @@ function encodeFormData(form: HTMLFormElement) {
 export function FinalCTA() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
+    setError(false);
 
     try {
-      await fetch("/__forms.html", {
+      const response = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encodeFormData(event.currentTarget),
       });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
       setSubmitted(true);
     } catch {
-      window.location.href = `mailto:${siteConfig.email}`;
+      setError(true);
     } finally {
       setSubmitting(false);
     }
@@ -83,6 +90,12 @@ export function FinalCTA() {
                   </label>
                 </p>
 
+                {error && (
+                  <p className="mb-4 rounded-lg border border-accent/30 bg-accent/10 px-4 py-3 text-sm text-primary-tier">
+                    Something went wrong. Please try again in a moment.
+                  </p>
+                )}
+
                 <div className="space-y-4">
                   <div>
                     <label htmlFor="contact-name" className="mb-2 block text-sm font-medium text-primary-tier">
@@ -126,16 +139,9 @@ export function FinalCTA() {
                   </div>
                 </div>
 
-                <div className="mt-6 flex flex-col gap-3">
+                <div className="mt-6">
                   <Button type="submit" className="w-full">
                     {submitting ? "Sending..." : "Book a Shoot"}
-                  </Button>
-                  <Button
-                    href={`mailto:${siteConfig.email}`}
-                    variant="secondary"
-                    className="w-full"
-                  >
-                    Email directly
                   </Button>
                 </div>
               </form>

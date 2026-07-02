@@ -21,12 +21,9 @@ export function Footer() {
             </p>
             <ul className="mt-4 space-y-2 text-sm text-secondary-tier">
               <li>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="transition-colors hover:text-accent"
-                >
-                  {siteConfig.email}
-                </a>
+                <Link href="#contact" className="transition-colors hover:text-accent">
+                  Book via contact form
+                </Link>
               </li>
               <li>{siteConfig.serviceAreas}</li>
             </ul>
